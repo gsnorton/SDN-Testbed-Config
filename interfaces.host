@@ -3,6 +3,18 @@
 auto lo
 iface lo inet loopback
 
+auto eth0
+iface eth0 inet static
+address 192.168.1.210
+gateway 192.168.1.1
+netmask 255.255.255.0
+dns_nameservers 192.168.1.1
+
 auto eth1
-iface eth1 inet manual
+iface eth0 inet manual
+
+auto br1
+iface br1 inet manual
+bridge_ports eth1
+bridge_stp off
 
